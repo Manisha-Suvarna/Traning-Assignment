@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() { 
+    int n, i, a[100]; 
+
+    printf("Enter the size of array\n");
+    scanf("%d", &n);
+
+    printf("Enter the %d values for array\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    // Mark duplicate elements as -1 (to delete repeated elements)
+    for(i = 0; i < n - 1; i++) {
+        for(int j = i + 1; j < n; j++) {
+            if(a[i] == a[j]) {  // If duplicate found
+                a[i] = -1;  // Mark first occurrence as deleted
+                a[j] = -1;  // Mark second occurrence as deleted
+            }
+        }
+    }
+
+    // Print unique elements (those not marked as -1)
+    printf("Unique elements are:\n");
+    for(i = 0; i < n-1; i++) {
+        if(a[i] > 0) {  
+            printf("%d ", a[i]);
+        }
+    }
+return 0;
+    
+}
