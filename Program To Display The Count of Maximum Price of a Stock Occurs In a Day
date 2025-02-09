@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int n, max, count = 0;
+    
+    // Input number of stock prices
+    printf("Enter the number of stock prices: ");
+    scanf("%d", &n);
+    
+    int arr[n];  // Declare an array to hold the prices
+    
+    // Input the stock prices
+    printf("Enter the %d stock prices:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Initialize max to the first element
+    max = arr[0];
+    
+    // Find the maximum price in the array
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    
+    // Count the number of times the maximum price occurs
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == max) {
+            count++;
+        }
+    }
+    
+    // Display the maximum price and its occurrence count
+    printf("max %d occurance %d\n", max, count);
+    
+    return 0;
+}
