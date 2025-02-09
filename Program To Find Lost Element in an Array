@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, j, temp;
+    
+    
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    
+    int a[n];
+    
+    // Input the array elements
+    printf("Enter %d elements:\n",n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    
+    //  Sort the array in ascending order
+    for(i = 0; i < n - 1; i++) {
+        for(j = 0; j < n - i - 1; j++) {
+            if(a[j] > a[j + 1]) {
+                // Swap a[j] and a[j+1]
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+    
+    // Display the sorted array
+    printf("Sorted array: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    
+    // Calculate the sum of the given array elements
+    int sum = 0;
+    for(i = 0; i < n; i++) {
+        sum += a[i];
+    }
+    
+    
+    // calculate the expected sum using the formula for the sum of first m natural numbers:
+    // Sum = m * (m + 1) / 2, where m = n + 1.
+    int m = n + 1;
+    int expectedSum = m * (m + 1) / 2;
+    
+    // The missing element is the difference between the expected sum and the sum of the array
+    int missing = expectedSum - sum;
+    
+    printf("Missing element is: %d\n", missing);
+    
+    return 0;
+}
