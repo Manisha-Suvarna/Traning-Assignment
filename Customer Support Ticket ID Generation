@@ -1,0 +1,20 @@
+#include <stdio.h>   
+#include <stdlib.h>  
+#include <time.h>    
+
+int main() {
+    char customerName[50];  // Array to store customer name
+    int randomNumber;       // Variable to store generated random number
+
+    srand(time(0)); 
+    randomNumber = (rand() % 9000) + 1000;  // Generate random number between 1000-9999
+
+    // user to enter their name
+    printf("Enter Customer Name: ");
+    scanf("%s", customerName);  
+
+    // Print the generated ticket ID in the required format
+    printf("Generated Ticket ID: TKT-%s-%d\n", customerName, randomNumber);
+
+    return 0; 
+}
