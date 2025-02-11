@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int a[] = {25, 30, 28, 55, 32, 29}; // Sensor readings
+    int n = 6, i; // Number of sensors
+
+    for(i = 0; i < n; i++) {
+        if(a[i] > 50) { // TO Check if any sensor reading is above 50°C
+            printf("Fault detected at index: %d (Value: %d)\n", i, a[i]);
+            return 0; // Exit as fault is found
+        }
+    }
+    
+    printf("All sensors are normal.\n"); // If no fault is found
+    return 0;
+}
