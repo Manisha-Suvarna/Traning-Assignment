@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];  
+    int i, len;
+
+    printf("Enter a string: ");
+    scanf("%s", str);  // Takes a single-word input
+
+    len = strlen(str);
+
+    // Check for palindrome
+    for (i = 0; i < len / 2; i++) {
+        if (str[i] != str[len - i - 1]) {
+            printf("No, it's not a palindrome.\n");
+            return 0;
+        }
+    }
+
+    // If loop completes without finding a mismatch
+    printf("Yes, it's a palindrome.\n");
+
+    return 0;
+}
