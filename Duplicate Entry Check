@@ -1,0 +1,25 @@
+#include <stdio.h>
+ int main() {
+    int registeredIDs[5] = {1, 7, 21, 32, 49}; // Existing registrations
+    int size=5;
+    int newID, i, isDuplicate = 0;
+
+    printf("Enter student ID to register: ");
+    scanf("%d", &newID);
+
+    // Checking for duplicate entry
+    for (i = 0; i < size; i++) {
+        if (registeredIDs[i] == newID) {
+            isDuplicate = 1;
+            break;
+        }
+    }
+
+    if (isDuplicate) {
+        printf("Duplicate Entry: Student ID %d is already registered.\n", newID);
+    } else {
+        printf("Registration successful for Student ID: %d\n", newID);
+    }
+
+    return 0;
+}
