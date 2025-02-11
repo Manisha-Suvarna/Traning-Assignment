@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+int main()
+{
+
+char ch[10];
+int i,vowels=0,consonants=0;
+
+printf("enter the character");
+scanf("%[^\n]",ch);
+int n=strlen(ch);//To find the length of the input string
+
+for (i = 0;i<n; i++) { //check if character is vowel
+if (ch[i] == 'a' || ch[i] == 'e'
+|| ch[i] == 'i' || ch[i] == 'o'
+|| ch[i] == 'u' || ch[i] == 'A'
+|| ch[i] == 'E' || ch[i] == 'I'
+|| ch[i] == 'O' || ch[i] == 'U')
+vowels++;
+
+else if (ch[i] == ' ') //To ignore spaces
+continue;
+
+else
+consonants++; //Increment consonants count
+}
+
+
+printf("\nVowels: %d",vowels);
+printf("\nconsonants: %d",consonants);
+return 0;
+}
