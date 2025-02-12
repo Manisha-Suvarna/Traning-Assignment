@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+char first_unique_char(const char *message) {
+    int count[256] = {0};
+    for (int i = 0; message[i]; i++) count[(unsigned char)message[i]]++;
+    for (int i = 0; message[i]; i++) if (count[(unsigned char)message[i]] == 1) return message[i];
+    return -1;
+}
+
+int main() {
+    char message[] = "customer support";
+    char result = first_unique_char(message);
+    printf("%c\n", result == -1 ? '-' : result);
+    return 0;
+}
