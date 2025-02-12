@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+void reverse(char *str, int index, int length) {
+    if (index >= length / 2) {
+        return;
+    }
+    char temp = str[index];
+    str[index] = str[length - index - 1];
+    str[length - index - 1] = temp;
+    reverse(str, index + 1, length);
+}
+
+void decode_message(char *encoded_message) {
+    int length = strlen(encoded_message);
+    reverse(encoded_message, 0, length);
+}
+
+int main() {
+    char encoded[] = "drawkcab";
+    decode_message(encoded);
+    printf("%s\n", encoded);  
+    return 0;
+}
